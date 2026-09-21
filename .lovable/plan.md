@@ -1,7 +1,7 @@
 # Portfólio profissional de Vinicius Rockenbach Dos Santos
 
 ## Visão geral
-Criar um portfólio responsivo, minimalista e elegante em uma única página fluida, usando apenas as informações confirmadas nesta conversa. O conteúdo ficará centralizado em uma estrutura simples para facilitar futuras atualizações.
+Criar um portfólio responsivo, minimalista e elegante em uma única página fluida, usando as informações confirmadas no currículo enviado. O conteúdo ficará centralizado em uma estrutura simples para facilitar futuras atualizações.
 
 ## Estrutura
 - Cabeçalho fixo com navegação para Início, Sobre, Habilidades, Experiência, Projetos e Contato.
@@ -9,7 +9,7 @@ Criar um portfólio responsivo, minimalista e elegante em uma única página flu
 - Sobre com resumo profissional e destaques objetivos.
 - Habilidades agrupadas em linguagens, ferramentas e idiomas.
 - Linha do tempo para Whirlpool Corporation e formação acadêmica.
-- Três projetos apresentados como estudos de experiência, sem inventar resultados ou números.
+- Dois projetos reais do currículo — Gestão de peças e Automação de planilhas — e um estudo técnico coerente com sua formação, sem inventar resultados ou números.
 - Contato com formulário que abre uma mensagem no aplicativo de e-mail e links sociais configuráveis.
 - Rodapé discreto.
 
@@ -28,5 +28,6 @@ Criar um portfólio responsivo, minimalista e elegante em uma única página flu
 - Validação visual em desktop e celular.
 
 ## Limites atuais
-- O currículo e a foto não foram recebidos; campos pessoais não confirmados não serão inventados.
-- LinkedIn, e-mail, formação, cargo, datas, tecnologias e resultados serão sinalizados de forma neutra ou omitidos até o envio dos dados reais.
+- O currículo não inclui foto nem endereço de LinkedIn; será usada uma composição visual com iniciais no lugar de uma fotografia inventada e o LinkedIn será omitido.
+- O conteúdo incluirá Campo Alegre/SC, telefone, e-mail, experiência na Whirlpool, formações, tecnologias, certificados, idiomas e os dois projetos informados.
+- O terceiro projeto será apresentado como um estudo técnico de desenvolvimento de sistemas, sem atribuir resultados ou métricas não informados.
