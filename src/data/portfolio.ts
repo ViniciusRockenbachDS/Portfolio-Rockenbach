@@ -6,6 +6,8 @@ export const portfolio = {
   email: "vinirockenbachs@gmail.com",
   phone: "+55 47 98858-1614",
   phoneHref: "tel:+5547988581614",
+  linkedin: "https://www.linkedin.com/in/vinicius-rockenbach-dos-santos-953baa354/",
+  github: "https://github.com/ViniciusRockenbachDS",
   intro:
     "Desenvolvedor em formação, movido por transformar desafios reais em soluções digitais claras, eficientes e bem construídas.",
   about:
