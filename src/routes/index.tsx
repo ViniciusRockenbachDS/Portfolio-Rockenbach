@@ -6,6 +6,8 @@ import {
   BriefcaseBusiness,
   Code2,
   GraduationCap,
+  Github,
+  Linkedin,
   Mail,
   MapPin,
   Menu,
@@ -17,6 +19,7 @@ import {
 import { useState, type FormEvent } from "react";
 
 import architectureImage from "../assets/developer-architecture.jpg";
+import { CursorTrail } from "../components/CursorTrail";
 import { portfolio } from "../data/portfolio";
 
 export const Route = createFileRoute("/")({
@@ -73,6 +76,8 @@ function PortfolioPage() {
 
   return (
     <main>
+      <div className="star-field" aria-hidden="true" />
+      <CursorTrail />
       <header className="site-header">
         <a href="#inicio" className="brand" aria-label="Ir ao início">
           <span>VR</span><strong>Vinícius<br />Rockenbach</strong>
@@ -186,7 +191,8 @@ function PortfolioPage() {
           <div className="contact-links">
             <a href={`mailto:${portfolio.email}`}><Mail /> <span><small>E-mail</small>{portfolio.email}</span></a>
             <a href={portfolio.phoneHref}><Phone /> <span><small>Telefone</small>{portfolio.phone}</span></a>
-            <div><MapPin /> <span><small>Localização</small>{portfolio.location}</span></div>
+            <a href={portfolio.linkedin} target="_blank" rel="noreferrer"><Linkedin /> <span><small>LinkedIn</small>Vinícius Rockenbach</span></a>
+            <a href={portfolio.github} target="_blank" rel="noreferrer"><Github /> <span><small>GitHub</small>ViniciusRockenbachDS</span></a>
           </div>
         </div>
         <form className="contact-form reveal" onSubmit={sendEmail}>
