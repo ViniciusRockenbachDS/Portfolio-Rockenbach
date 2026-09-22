@@ -167,7 +167,7 @@ footer a { display: flex; align-items: center; gap: .4rem; color: var(--foregrou
 @media (max-width: 600px) {
   .brand strong { display: none; }
   .hero { min-height: 88svh; padding-bottom: 3rem; }
-  .hero h1 { font-size: clamp(3rem, 16vw, 4.8rem); }
+  .hero h1 { font-size: clamp(2.75rem, 12vw, 4rem); }
   .hero-bottom { grid-template-columns: 1fr auto; }
   .hero-side-label { display: none; }
   .section { padding-top: 5rem; padding-bottom: 5rem; }
