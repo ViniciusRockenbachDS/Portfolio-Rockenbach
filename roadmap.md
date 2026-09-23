@@ -9,4 +9,4 @@
 - [x] Animar a linha inferior dos links do menu
 - [x] Substituir localização por LinkedIn e GitHub no contato
 - [x] Evoluir o rastro para uma nuvem estelar com efeito de clique
-- [ ] Validar os novos efeitos em desktop e celular
+- [x] Validar os novos efeitos em desktop e celular
