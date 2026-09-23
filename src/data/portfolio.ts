@@ -6,12 +6,13 @@ export const portfolio = {
   email: "vinirockenbachs@gmail.com",
   phone: "+55 47 98858-1614",
   phoneHref: "tel:+5547988581614",
+  whatsapp: "https://wa.me/5547988581614",
   linkedin: "https://www.linkedin.com/in/vinicius-rockenbach-dos-santos-953baa354/",
   github: "https://github.com/ViniciusRockenbachDS",
   intro:
-    "Desenvolvedor em formação, movido por transformar desafios reais em soluções digitais claras, eficientes e bem construídas.",
+    "Desenvolvedor em formação, motivado a ser um futuro engenheiro de dados",
   about:
-    "Minha trajetória une a vivência prática na indústria à formação em Engenharia de Software. Na Whirlpool Corporation, passei pela área de manutenção e evoluí para o desenvolvimento de projetos, sites, funções e softwares — uma experiência que fortaleceu meu olhar para processos, pessoas e tecnologia.",
+    "Atualmente, estou estudando diversas áreas de tecnologia e programação, como Python, SQL, AWS, Docker, Power BI, entre outros, para aprimorar minhas habilidades e buscar uma carreira sólida como engenheiro de dados, mas sempre aberto a outras oportunidades. Meu foco é criar projetos de dados que sejam escaláveis, automatizados e eficientes, garantindo a alta disponibilidade e a qualidade dos dados de ponta a ponta. Atualmente, estou cursando Engenharia de Software, além de outras disciplinas extracurriculares.",
   stats: [
     { value: "2025", label: "Início na indústria" },
     { value: "16+", label: "Tecnologias e ferramentas" },

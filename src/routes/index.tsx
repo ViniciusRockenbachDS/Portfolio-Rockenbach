@@ -67,9 +67,14 @@ function PortfolioPage() {
   const sendEmail = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = new FormData(event.currentTarget);
-    const subject = encodeURIComponent(`Contato pelo portfólio — ${String(form.get("name") ?? "")}`);
+    const name = String(form.get("name") ?? "").trim();
+    const email = String(form.get("email") ?? "").trim();
+    const message = String(form.get("message") ?? "").trim();
+    if (!name || !email || !message) return;
+
+    const subject = encodeURIComponent(`Contato pelo portfólio — ${name}`);
     const body = encodeURIComponent(
-      `Nome: ${String(form.get("name") ?? "")}\nE-mail: ${String(form.get("email") ?? "")}\n\n${String(form.get("message") ?? "")}`,
+      `Nome: ${name}\nE-mail: ${email}\n\n${message}`,
     );
     window.location.href = `mailto:${portfolio.email}?subject=${subject}&body=${body}`;
   };
@@ -100,7 +105,7 @@ function PortfolioPage() {
         <img className="hero-image" src={architectureImage} alt="Arquitetura abstrata de sistemas conectados" width={1400} height={1000} />
         <div className="hero-overlay" />
         <div className="hero-content">
-          <p className="availability"><span /> Disponível para novos desafios</p>
+          <p className="availability"><span /> Estou sempre em busca de conhecimento e oportunidades na área de desenvolvimento/TI!</p>
           <h1>Vinícius<br /><em>Rockenbach.</em></h1>
           <div className="hero-bottom">
             <p>{portfolio.intro}</p>
@@ -186,19 +191,19 @@ function PortfolioPage() {
       <section id="contato" className="section contact-section">
         <div className="contact-intro reveal">
           <div className="section-kicker"><span>05</span>Contato</div>
-          <h2>Vamos construir algo <em>incrível?</em></h2>
+          <h2>Vamos trabalhar <em>juntos?</em></h2>
           <p>Estou aberto a oportunidades, colaborações e boas conversas sobre tecnologia.</p>
           <div className="contact-links">
             <a href={`mailto:${portfolio.email}`}><Mail /> <span><small>E-mail</small>{portfolio.email}</span></a>
-            <a href={portfolio.phoneHref}><Phone /> <span><small>Telefone</small>{portfolio.phone}</span></a>
+            <a href={portfolio.whatsapp} target="_blank" rel="noreferrer"><Phone /> <span><small>WhatsApp</small>{portfolio.phone}</span></a>
             <a href={portfolio.linkedin} target="_blank" rel="noreferrer"><Linkedin /> <span><small>LinkedIn</small>Vinícius Rockenbach</span></a>
             <a href={portfolio.github} target="_blank" rel="noreferrer"><Github /> <span><small>GitHub</small>ViniciusRockenbachDS</span></a>
           </div>
         </div>
         <form className="contact-form reveal" onSubmit={sendEmail}>
-          <label>Seu nome<input required name="name" placeholder="Como posso te chamar?" /></label>
-          <label>Seu e-mail<input required type="email" name="email" placeholder="voce@email.com" /></label>
-          <label>Sua mensagem<textarea required name="message" rows={5} placeholder="Conte um pouco sobre sua ideia ou oportunidade..." /></label>
+          <label>Seu nome<input required maxLength={100} name="name" autoComplete="name" placeholder="Como posso te chamar?" /></label>
+          <label>Seu e-mail<input required maxLength={255} type="email" name="email" autoComplete="email" placeholder="voce@email.com" /></label>
+          <label>Sua mensagem<textarea required maxLength={2000} name="message" rows={5} placeholder="Conte um pouco sobre sua ideia ou oportunidade..." /></label>
           <button type="submit">Enviar mensagem <Send size={18} /></button>
         </form>
       </section>
