@@ -10,3 +10,6 @@
 - [x] Substituir localização por LinkedIn e GitHub no contato
 - [x] Evoluir o rastro para uma nuvem estelar com efeito de clique
 - [x] Validar os novos efeitos em desktop e celular
+- [x] Atualizar apresentação, objetivo profissional e texto sobre mim
+- [x] Ajustar e validar os atalhos de e-mail, WhatsApp, LinkedIn e GitHub
+- [ ] Substituir as iniciais pela foto pessoal (aguardando o envio da imagem)
