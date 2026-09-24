@@ -187,10 +187,10 @@ footer a { display: flex; align-items: center; gap: .4rem; color: var(--foregrou
 }
 
 @media (max-width: 900px) {
-  .site-header { grid-template-columns: minmax(0,1fr) auto; }
-  .header-preferences { position: static; justify-self: end; margin-right: 3.4rem; }
+  .site-header { grid-template-columns: auto minmax(0,1fr) auto; gap: .75rem; }
+  .header-preferences { position: static; grid-column: 2; justify-self: end; margin: 0; }
   .desktop-nav, .header-contact { display: none; }
-  .menu-button { justify-self: end; display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid var(--border); background: var(--background); color: var(--foreground); }
+  .menu-button { grid-column: 3; justify-self: end; display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid var(--border); background: var(--background); color: var(--foreground); }
   .mobile-nav { display: grid; position: absolute; top: 76px; left: 0; right: 0; padding: 1.5rem; background: var(--background); border-bottom: 1px solid var(--border); }
   .mobile-nav a { padding: .8rem; color: var(--secondary-foreground); }
   .section-heading, .about-grid, .contact-section { grid-template-columns: 1fr; }
@@ -208,7 +208,6 @@ footer a { display: flex; align-items: center; gap: .4rem; color: var(--foregrou
 
 @media (max-width: 600px) {
   .brand strong { display: none; }
-  .header-preferences { margin-right: 3rem; }
   .language-toggle { min-width: 66px; padding: 0 .55rem; }
   .hero { min-height: 88svh; padding-bottom: 3rem; }
   .hero h1 { font-size: clamp(2.75rem, 12vw, 4rem); }

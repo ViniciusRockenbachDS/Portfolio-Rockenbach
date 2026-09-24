@@ -121,6 +121,7 @@ function PortfolioPage() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [locale, setLocale] = useState<"pt" | "en">("pt");
   const [theme, setTheme] = useState<"dark" | "light">("dark");
+  const [preferencesLoaded, setPreferencesLoaded] = useState(false);
   const text = copy[locale];
   const content = locale === "pt" ? portfolio : portfolioEn;
 
@@ -129,14 +130,16 @@ function PortfolioPage() {
     const savedTheme = window.localStorage.getItem("portfolio-theme");
     if (savedLocale === "pt" || savedLocale === "en") setLocale(savedLocale);
     if (savedTheme === "dark" || savedTheme === "light") setTheme(savedTheme);
+    setPreferencesLoaded(true);
   }, []);
 
   useEffect(() => {
+    if (!preferencesLoaded) return;
     document.documentElement.lang = locale === "pt" ? "pt-BR" : "en";
     document.documentElement.dataset["theme"] = theme;
     window.localStorage.setItem("portfolio-locale", locale);
     window.localStorage.setItem("portfolio-theme", theme);
-  }, [locale, theme]);
+  }, [locale, preferencesLoaded, theme]);
 
   const sendEmail = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
