@@ -204,7 +204,14 @@ function PortfolioPage() {
         <SectionHeading number="01" eyebrow={text.sections.about[0]} title={text.sections.about[1]} />
         <div className="about-grid">
           <div className="portrait-card reveal">
-            <img className="portrait-image" src="/foto-minha.jpg" alt="foto de Vinícius Rockenbach" width={360} height={360} />
+            /* ✅ Opção 1 */
+<img 
+  className="portrait-image" 
+  src={`${import.meta.env.BASE_URL}foto-minha.jpg`} 
+  alt="foto de Vinícius Rockenbach" 
+  width={360} 
+  height={360} 
+/>
 
 
 
