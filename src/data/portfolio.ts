@@ -1,8 +1,7 @@
 export const portfolio = {
-  name: "Vinícius Rockenbach dos Santos",
+  name: "Vinicius Rockenbach dos Santos",
   initials: "VR",
   role: "Programador",
-  location: "Campo Alegre, Santa Catarina",
   email: "vinirockenbachs@gmail.com",
   phone: "+55 47 98858-1614",
   phoneHref: "tel:+5547988581614",
@@ -13,15 +12,11 @@ export const portfolio = {
     "Desenvolvedor em formação, motivado a ser um futuro engenheiro de dados",
   about:
     "Atualmente, estou estudando diversas áreas de tecnologia e programação, como Python, SQL, AWS, Docker, Power BI, entre outros, para aprimorar minhas habilidades e buscar uma carreira sólida como engenheiro de dados, mas sempre aberto a outras oportunidades. Meu foco é criar projetos de dados que sejam escaláveis, automatizados e eficientes, garantindo a alta disponibilidade e a qualidade dos dados de ponta a ponta. Atualmente, estou cursando Engenharia de Software, além de outras disciplinas extracurriculares.",
-  stats: [
-    { value: "2025", label: "Início na indústria" },
-    { value: "16+", label: "Tecnologias e ferramentas" },
-    { value: "2", label: "Idiomas além do português" },
-  ],
+  
   skillGroups: [
     {
       title: "Desenvolvimento",
-      items: ["JavaScript", "TypeScript", "Python", "Java", "C", "PHP", "Desenvolvimento Web"],
+      items: ["JavaScript", "TypeScript", "Python", "Java", "Desenvolvimento Web"],
     },
     {
       title: "Dados & Cloud",
@@ -29,12 +24,12 @@ export const portfolio = {
     },
     {
       title: "Ferramentas & Suporte",
-      items: ["Git", "Docker", "Pacote Office", "Suporte técnico", "phpMyAdmin"],
+      items: ["Git", "Docker", "Pacote Office", "Suporte técnico", "Pacote Office"],
     },
   ],
   languages: [
-    { name: "Inglês", level: "Avançado", value: 85 },
-    { name: "Espanhol", level: "Intermediário", value: 62 },
+    { name: "Inglês", level: "Avançado", value: 70 },
+    { name: "Espanhol", level: "Básico", value: 20 },
   ],
   experience: [
     {
@@ -65,13 +60,13 @@ export const portfolio = {
       description: "Formação com itinerário extracurricular semanal no contraturno.",
     },
   ],
-  projects: [
+   projects: [
     {
       number: "01",
       title: "Gestão de peças",
       context: "Máquinas Whirlpool",
       description:
-        "Projeto voltado à organização e ao acompanhamento de peças utilizadas em máquinas, conectando a rotina da manutenção a uma solução digital mais clara.",
+        "Projeto voltado à organização, ao acompanhamento e armazenamento de peças/itens utilizadas em máquinas, conectando a rotina da manutenção a uma solução digital mais clara.",
       tags: ["Gestão", "Indústria", "Desenvolvimento"],
     },
     {
@@ -81,39 +76,35 @@ export const portfolio = {
       description:
         "Automação aplicada a planilhas do ambiente industrial, reduzindo tarefas repetitivas e apoiando um fluxo de informação mais consistente.",
       tags: ["Automação", "Dados", "Produtividade"],
+    }
+  ],  
+   certificatesDetailed: [
+    {
+      title: "ACIJ — Associação Empresarial de Joinville",
+      description: "Participei de um programa de geração empreendedora em 2023 que promoveu minha educação e qualidade no empreendedorismo"
     },
     {
-      number: "03",
-      title: "Sistemas de informação",
-      context: "Estudo técnico",
-      description:
-        "Práticas de desenvolvimento full stack e banco de dados construídas durante a aprendizagem no SESI SENAI e a graduação em Engenharia de Software.",
-      tags: ["Front-end", "Banco de dados", "Software"],
+      title: "SESI SENAI — Programador de Sistemas da Informação",
+      description: "Junto ao período que trabalhei na whirlpool tive a oportunidade de realizar uma aprendizagem no curso de programador de sistemas da informação. Dentro dessa aprendizagem aumentei meu desempenho em diversas etapas, vivências em uma empresa, qualidade e produtividade e diversas linguagens de programação como; Java Script, C, Python,  Front end e Banco de dados sendo eles PHPMyAdmin e Mysql."
     },
-  ],
-  certificates: [
-    "ACIJ — Associação Empresarial de Joinville",
-    "SESI SENAI — Programador de Sistemas da Informação",
-    "Udemy — Java Completo",
-  ],
-} as const;
+    {
+      title: "Udemy — Java Completo",
+      description: "Sua descrição sobre o curso da Udemy aqui..."
+    }
+  ]
+};
 
 export const portfolioEn = {
   ...portfolio,
   role: "Developer",
-  location: "Campo Alegre, Santa Catarina, Brazil",
   intro: "Developer in training, motivated to become a data engineer",
   about:
     "I am currently studying several areas of technology and programming, including Python, SQL, AWS, Docker, and Power BI, to improve my skills and build a solid career as a data engineer, while remaining open to other opportunities. My goal is to create scalable, automated, and efficient data projects, ensuring high availability and end-to-end data quality. I am pursuing a degree in Software Engineering, along with additional extracurricular studies.",
-  stats: [
-    { value: "2025", label: "Industry career start" },
-    { value: "16+", label: "Technologies and tools" },
-    { value: "2", label: "Languages beyond Portuguese" },
-  ],
+
   skillGroups: [
     {
       title: "Development",
-      items: ["JavaScript", "TypeScript", "Python", "Java", "C", "PHP", "Web Development"],
+      items: ["JavaScript", "TypeScript", "Python", "Java", "Web Development"],
     },
     {
       title: "Data & Cloud",
@@ -121,12 +112,12 @@ export const portfolioEn = {
     },
     {
       title: "Tools & Support",
-      items: ["Git", "Docker", "Microsoft Office", "Technical Support", "phpMyAdmin"],
+      items: ["Git", "Docker", "Microsoft Office", "Technical Support", "Office package"],
     },
   ],
   languages: [
-    { name: "English", level: "Advanced", value: 85 },
-    { name: "Spanish", level: "Intermediate", value: 62 },
+    { name: "English", level: "Advanced", value: 70 },
+    { name: "Spanish", level: "Basic", value: 20 },
   ],
   experience: [
     {
@@ -183,9 +174,18 @@ export const portfolioEn = {
       tags: ["Front-end", "Databases", "Software"],
     },
   ],
-  certificates: [
-    "ACIJ — Joinville Business Association",
-    "SESI SENAI — Information Systems Programmer",
-    "Udemy — Complete Java Course",
-  ],
+  certificatesDetailed: [
+    {
+      title: "ACIJ — Joinville Business Association",
+      description: "I participated in an entrepreneurial development program in 2023 that enhanced my education and the quality of my entrepreneurship."
+    },
+    {
+      title: "SESI SENAI — Information Systems Programmer",
+      description: "During my time at Whirlpool, I had the opportunity to complete an apprenticeship program focused on information systems programming. Through this experience, I improved my performance across various areas—including corporate operations, quality, and productivity—and gained proficiency in several programming languages ​​and technologies, such as JavaScript, C, Python, front-end development, and databases (specifically phpMyAdmin and MySQL)."
+    },
+    {
+      title: "Udemy — Complete Java Course",
+      description: "Your description about the Udemy course in English here..."
+    }
+  ]
 } as const;

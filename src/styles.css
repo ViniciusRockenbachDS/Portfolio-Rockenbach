@@ -114,8 +114,8 @@ main > header, main > section, main > footer { position: relative; z-index: 2; }
 .about-section, .experience-section { background: color-mix(in oklab, var(--muted) 92%, transparent); }
 .about-grid { display: grid; grid-template-columns: minmax(260px, .78fr) 1.22fr; gap: clamp(3rem,8vw,8rem); align-items: center; }
 .portrait-card { position: relative; overflow: hidden; min-height: 470px; display: grid; place-items: center; background: var(--secondary); border: 1px solid var(--border); }
-.portrait-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform .6s ease; }
-.portrait-card:hover .portrait-image { transform: scale(1.035); }
+.foto-minha.jpg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform .6s ease; }
+.portrait-card:hover .foto-minha.jpg { transform: scale(1.035); }
 .portrait-shade { position: absolute; inset: 0; background: linear-gradient(to top, color-mix(in oklab, var(--background) 78%, transparent), transparent 48%); }
 .portrait-meta { position: absolute; left: 1.5rem; bottom: 1.5rem; display: flex; gap: .5rem; align-items: center; font-size: .75rem; color: var(--secondary-foreground); }
 .about-copy > p { font-size: clamp(1.1rem,1.7vw,1.5rem); line-height: 1.75; color: var(--secondary-foreground); }
