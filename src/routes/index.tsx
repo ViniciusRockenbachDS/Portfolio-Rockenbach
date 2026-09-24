@@ -17,7 +17,7 @@ import {
   Sparkles,
   X,
 } from "lucide-react";
-import { useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 
 import architectureImage from "../assets/developer-architecture.jpg";
 import portraitAsset from "../assets/vinicius-rockenbach.jpg.asset.json";
@@ -133,7 +133,7 @@ function PortfolioPage() {
 
   useEffect(() => {
     document.documentElement.lang = locale === "pt" ? "pt-BR" : "en";
-    document.documentElement.dataset.theme = theme;
+    document.documentElement.dataset["theme"] = theme;
     window.localStorage.setItem("portfolio-locale", locale);
     window.localStorage.setItem("portfolio-theme", theme);
   }, [locale, theme]);
