@@ -1,9 +1,11 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@source "../src";
-
-@theme inline {
+/* Configuração do tema no Tailwind CSS v4 */
+@theme {
+  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
+  
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
@@ -19,8 +21,6 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --font-sans: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-display: "Space Grotesk", sans-serif;
 }
 
 :root {
@@ -61,7 +61,10 @@
   --cursor-glow: oklch(0.6 0.2 240);
 }
 
-* { box-sizing: border-box; border-color: var(--border); }
+* { 
+  box-sizing: border-box; 
+  border-color: var(--border); 
+}
 
 html { 
   font-size: 106.25%; 
@@ -69,14 +72,20 @@ html {
   scroll-padding-top: 5rem; 
 }
 
+/* Força a fonte Outfit no corpo do site todo */
 body { 
   margin: 0; 
   background: var(--background); 
   color: var(--foreground); 
-  font-family: var(--font-sans); 
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important; 
   font-size: 1.1rem; 
   line-height: 1.65; 
   transition: background-color .3s ease, color .3s ease; 
+}
+
+/* Força a fonte Space Grotesk nos títulos principal do site */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', sans-serif !important;
 }
 
 button, input, textarea { font: inherit; }
