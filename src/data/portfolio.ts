@@ -97,3 +97,95 @@ export const portfolio = {
     "Udemy — Java Completo",
   ],
 } as const;
+
+export const portfolioEn = {
+  ...portfolio,
+  role: "Developer",
+  location: "Campo Alegre, Santa Catarina, Brazil",
+  intro: "Developer in training, motivated to become a data engineer",
+  about:
+    "I am currently studying several areas of technology and programming, including Python, SQL, AWS, Docker, and Power BI, to improve my skills and build a solid career as a data engineer, while remaining open to other opportunities. My goal is to create scalable, automated, and efficient data projects, ensuring high availability and end-to-end data quality. I am pursuing a degree in Software Engineering, along with additional extracurricular studies.",
+  stats: [
+    { value: "2025", label: "Industry career start" },
+    { value: "16+", label: "Technologies and tools" },
+    { value: "2", label: "Languages beyond Portuguese" },
+  ],
+  skillGroups: [
+    {
+      title: "Development",
+      items: ["JavaScript", "TypeScript", "Python", "Java", "C", "PHP", "Web Development"],
+    },
+    {
+      title: "Data & Cloud",
+      items: ["SQL", "PostgreSQL", "MySQL", "PySpark", "Power BI", "Databricks", "AWS"],
+    },
+    {
+      title: "Tools & Support",
+      items: ["Git", "Docker", "Microsoft Office", "Technical Support", "phpMyAdmin"],
+    },
+  ],
+  languages: [
+    { name: "English", level: "Advanced", value: 85 },
+    { name: "Spanish", level: "Intermediate", value: 62 },
+  ],
+  experience: [
+    {
+      period: "JAN — DEC 2025",
+      company: "Whirlpool Corporation",
+      role: "Developer / Maintenance",
+      description:
+        "Worked as a young apprentice in partnership with SESI SENAI. Started by supporting toolmakers and mechanics in maintenance, then transitioned into developing websites, functions, and software.",
+    },
+  ],
+  education: [
+    {
+      period: "FEB 2025 — PRESENT",
+      institution: "UNIASSELVI",
+      course: "Bachelor’s Degree in Software Engineering",
+      description: "Ongoing degree focused on expanding technical and professional software development skills.",
+    },
+    {
+      period: "JAN — DEC 2025",
+      institution: "SESI SENAI",
+      course: "Information Systems Programmer",
+      description: "Industrial apprenticeship with practical work in JavaScript, C, Python, front-end, and databases.",
+    },
+    {
+      period: "2022 — 2024",
+      institution: "Escola Católica Machado de Assis",
+      course: "High School Diploma",
+      description: "High school education with weekly extracurricular studies.",
+    },
+  ],
+  projects: [
+    {
+      number: "01",
+      title: "Parts management",
+      context: "Whirlpool machinery",
+      description:
+        "A project focused on organizing and tracking parts used in machinery, connecting maintenance routines to a clearer digital solution.",
+      tags: ["Management", "Industry", "Development"],
+    },
+    {
+      number: "02",
+      title: "Spreadsheet automation",
+      context: "Whirlpool Corporation",
+      description:
+        "Automation applied to spreadsheets in an industrial environment, reducing repetitive tasks and supporting a more consistent information flow.",
+      tags: ["Automation", "Data", "Productivity"],
+    },
+    {
+      number: "03",
+      title: "Information systems",
+      context: "Technical studies",
+      description:
+        "Full-stack and database development exercises completed during my SESI SENAI apprenticeship and Software Engineering degree.",
+      tags: ["Front-end", "Databases", "Software"],
+    },
+  ],
+  certificates: [
+    "ACIJ — Joinville Business Association",
+    "SESI SENAI — Information Systems Programmer",
+    "Udemy — Complete Java Course",
+  ],
+} as const;
