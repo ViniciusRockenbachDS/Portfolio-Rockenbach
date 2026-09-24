@@ -19,8 +19,8 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-display: "Plus Jakarta Sans", sans-serif;
+  --font-sans: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
 }
 
 :root {
@@ -64,7 +64,7 @@
 * { box-sizing: border-box; border-color: var(--border); }
 
 html { 
-  font-size: 106.25%; /* Aumenta a escala global das fontes */
+  font-size: 106.25%; 
   scroll-behavior: smooth; 
   scroll-padding-top: 5rem; 
 }
@@ -98,15 +98,43 @@ main > header, main > section, main > footer { position: relative; z-index: 2; }
   padding: 0 clamp(1.5rem, 5vw, 5rem); 
   display: flex; 
   align-items: center; 
-  justify-content: space-between; 
+  gap: 2.5rem;
   border-bottom: 1px solid var(--border); 
   background: color-mix(in oklab, var(--background) 86%, transparent); 
   backdrop-filter: blur(18px); 
 }
 
 .brand { display: flex; align-items: center; gap: .75rem; width: max-content; }
-.brand > span { display: grid; place-items: center; width: 40px; height: 40px; background: var(--primary); color: var(--primary-foreground); font: 700 1rem var(--font-display); border-radius: 6px; }
+.brand > span { display: grid; place-items: center; width: 40px; height: 40px; background: var(--primary); color: var(--primary-foreground); font: 700 1.1rem var(--font-display); border-radius: 6px; }
 .brand strong { font: 700 1rem/1.2 var(--font-display); text-transform: uppercase; letter-spacing: .03em; }
+
+/* Empurra o menu para a direita */
+.desktop-nav { 
+  display: flex; 
+  align-items: center;
+  gap: clamp(1.5rem, 2.5vw, 2.5rem); 
+  margin-left: auto; /* Empurra os links para colar mais à direita */
+}
+
+.desktop-nav a { 
+  position: relative; 
+  padding: .7rem 0; 
+  color: var(--muted-foreground); 
+  font-size: 1.05rem; 
+  font-weight: 600; 
+  transition: color .25s; 
+}
+
+.desktop-nav a::after { content: ""; position: absolute; left: 0; right: 0; bottom: .25rem; height: 2px; background: var(--cursor-glow); transform: scaleX(0); transform-origin: right; transition: transform .28s ease; }
+.desktop-nav a:hover::after, .desktop-nav a:focus-visible::after { transform: scaleX(1); transform-origin: left; }
+.desktop-nav a:hover { color: var(--foreground); }
+
+/* Bloco da Direita (Contato e Controles) */
+.header-right-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
 
 .header-preferences { display: flex; align-items: center; gap: .6rem; }
 .language-toggle, .theme-toggle { display: inline-flex; align-items: center; justify-content: center; height: 38px; border: 1px solid var(--border); background: color-mix(in oklab, var(--background) 78%, transparent); color: var(--muted-foreground); cursor: pointer; transition: color .25s, border-color .25s, background .25s, transform .25s; }
@@ -116,22 +144,14 @@ main > header, main > section, main > footer { position: relative; z-index: 2; }
 .theme-toggle { width: 38px; padding: 0; border-radius: 50%; }
 .language-toggle:hover, .theme-toggle:hover { color: var(--foreground); border-color: var(--primary); transform: translateY(-1px); }
 
-.desktop-nav { display: flex; justify-content: center; gap: clamp(1.5rem, 2.8vw, 3rem); }
-.desktop-nav a { position: relative; padding: .7rem 0; color: var(--muted-foreground); font-size: 1rem; font-weight: 600; transition: color .25s; }
-.desktop-nav a::after { content: ""; position: absolute; left: 0; right: 0; bottom: .25rem; height: 2px; background: var(--cursor-glow); transform: scaleX(0); transform-origin: right; transition: transform .28s ease; }
-.desktop-nav a:hover::after, .desktop-nav a:focus-visible::after { transform: scaleX(1); transform-origin: left; }
-.desktop-nav a:hover { color: var(--foreground); }
-
-/* Fix no Botão 'Vamos Conversar' no Header */
 .header-contact { 
-  margin-left: auto; 
   display: flex; 
   align-items: center; 
   gap: .5rem; 
-  font-size: 1rem; 
+  font-size: 0.95rem; 
   font-weight: 700; 
   color: var(--primary); 
-  padding: .5rem 1rem;
+  padding: .5rem 1.1rem;
   border: 1px solid color-mix(in oklab, var(--primary) 40%, transparent);
   border-radius: 999px;
   transition: all .25s ease;
