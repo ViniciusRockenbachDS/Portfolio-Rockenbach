@@ -17,12 +17,11 @@ import {
   Sparkles,
   X,
 } from "lucide-react";
-import { useEffect, useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent, type ChangeEvent } from "react";
 
 import architectureImage from "../assets/developer-architecture.jpg";
 import { CursorTrail } from "../components/CursorTrail";
 import { portfolio, portfolioEn } from "../data/portfolio";
-
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -122,6 +121,14 @@ function PortfolioPage() {
   const [locale, setLocale] = useState<"pt" | "en">("pt");
   const [theme, setTheme] = useState<"dark" | "light">("dark");
   const [preferencesLoaded, setPreferencesLoaded] = useState(false);
+  
+  // Estado para os dados digitados no formulário
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
   const text = copy[locale];
   const content = locale === "pt" ? portfolio : portfolioEn;
 
@@ -141,18 +148,24 @@ function PortfolioPage() {
     window.localStorage.setItem("portfolio-theme", theme);
   }, [locale, preferencesLoaded, theme]);
 
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
   const sendEmail = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const form = new FormData(event.currentTarget);
-    const name = String(form.get("name") ?? "").trim();
-    const email = String(form.get("email") ?? "").trim();
-    const message = String(form.get("message") ?? "").trim();
-    if (!name || !email || !message) return;
+    const { name, email, message } = formData;
+    if (!name.trim() || !email.trim() || !message.trim()) return;
 
     const subject = encodeURIComponent(`Contato pelo portfólio — ${name}`);
     const body = encodeURIComponent(
-      `Nome: ${name}\nE-mail: ${email}\n\n${message}`,
+      `Nome: ${name}\nE-mail: ${email}\n\nMensagem:\n${message}`,
     );
+    
     window.location.href = `mailto:${portfolio.email}?subject=${subject}&body=${body}`;
   };
 
@@ -204,17 +217,13 @@ function PortfolioPage() {
         <SectionHeading number="01" eyebrow={text.sections.about[0]} title={text.sections.about[1]} />
         <div className="about-grid">
           <div className="portrait-card reveal">
-            
-<img 
-  className="portrait-image" 
-  src={`${import.meta.env.BASE_URL}foto-minha.jpg`} 
-  alt="foto de Vinícius Rockenbach" 
-  width={360} 
-  height={360} 
-/>
-
-
-
+            <img 
+              className="portrait-image" 
+              src={`${import.meta.env.BASE_URL}foto-minha.jpg`} 
+              alt="foto de Vinícius Rockenbach" 
+              width={360} 
+              height={360} 
+            />
             <div className="portrait-shade" />
           </div>
           <div className="about-copy reveal">
@@ -258,61 +267,54 @@ function PortfolioPage() {
             {content.education.map((item) => <TimelineItem key={item.institution + item.course} {...item} title={item.institution} subtitle={item.course} />)}
           </div>
         </div>
-        <div data-tsd-source="/src/routes/index.tsx:255:9" className="certificates reveal">
-  <svg xmlns="http://w3.org" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-award" aria-hidden="true">
-    <path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"></path>
-    <circle cx="12" cy="8" r="6"></circle>
-  </svg>
-  
-  <div>
-    <span>{(text as any).language === "Switch website language to English" ? "Certificados & reconhecimento" : "Certificates & Recognition"}</span>
-    
-    {/* Bloco 1 */}
-    <div style={{ marginTop: '12px' }}>
-      <strong>
-        {(text as any).language === "Switch website language to English"
-          ? "ACIJ — Associação Empresarial de Joinville"
-          : "ACIJ — Joinville Business Association"}
-      </strong>
-      <p style={{ margin: '4px 0 0 0', opacity: 0.8, fontSize: '0.95rem' }}>
-        {(text as any).language === "Switch website language to English"
-          ? "Participei de um programa de geração empreendedora em 2023 que promoveu minha educação e qualidade no empreendedorismo."
-          : "I participated in an entrepreneurial development program in 2023 that enhanced my education and the quality of my entrepreneurship."}
-      </p>
-    </div>
+        <div className="certificates reveal">
+          <Award size={24} aria-hidden="true" />
+          <div>
+            <span>{(text as any).language === "Switch website language to English" ? "Certificados & reconhecimento" : "Certificates & Recognition"}</span>
+            
+            {/* Bloco 1 */}
+            <div style={{ marginTop: '12px' }}>
+              <strong>
+                {(text as any).language === "Switch website language to English"
+                  ? "ACIJ — Associação Empresarial de Joinville"
+                  : "ACIJ — Joinville Business Association"}
+              </strong>
+              <p style={{ margin: '4px 0 0 0', opacity: 0.8, fontSize: '0.95rem' }}>
+                {(text as any).language === "Switch website language to English"
+                  ? "Participei de um programa de geração empreendedora em 2023 que promoveu minha educação e qualidade no empreendedorismo."
+                  : "I participated in an entrepreneurial development program in 2023 that enhanced my education and the quality of my entrepreneurship."}
+              </p>
+            </div>
 
-    {/* Bloco 2 */}
-    <div style={{ marginTop: '16px' }}>
-      <strong>
-        {(text as any).language === "Switch website language to English"
-          ? "SESI SENAI — Programador de Sistemas da Informação"
-          : "SESI SENAI — Information Systems Programmer"}
-      </strong>
-      <p style={{ margin: '4px 0 0 0', opacity: 0.8, fontSize: '0.95rem' }}>
-        {(text as any).language === "Switch website language to English"
-          ? "Junto ao período que trabalhei na whirlpool tive a oportunidade de realizar uma aprendizagem no curso de programador de sistemas da informação. Dentro dessa aprendizagem aumentei meu desempenho em diversas etapas, vivências em uma empresa, qualidade e produtividade e diversas linguagens de programação como; Java Script, C, Python,  Front end e Banco de dados sendo eles PHPMyAdmin e Mysql."
-          : "During my time at Whirlpool, I had the opportunity to complete an apprenticeship program as an Information Systems Programmer.Through this experience, I improved my performance across various areas—including corporate operations, quality, and productivity—and gained proficiency in several programming languages ​​and technologies, such as JavaScript, C, Python, front-end development, and databases (specifically phpMyAdmin and MySQL)."}
-      </p>
-    </div>
+            {/* Bloco 2 */}
+            <div style={{ marginTop: '16px' }}>
+              <strong>
+                {(text as any).language === "Switch website language to English"
+                  ? "SESI SENAI — Programador de Sistemas da Informação"
+                  : "SESI SENAI — Information Systems Programmer"}
+              </strong>
+              <p style={{ margin: '4px 0 0 0', opacity: 0.8, fontSize: '0.95rem' }}>
+                {(text as any).language === "Switch website language to English"
+                  ? "Junto ao período que trabalhei na whirlpool tive a oportunidade de realizar uma aprendizagem no curso de programador de sistemas da informação. Dentro dessa aprendizagem aumentei meu desempenho em diversas etapas, vivências em uma empresa, qualidade e produtividade e diversas linguagens de programação como; Java Script, C, Python, Front end e Banco de dados sendo eles PHPMyAdmin e Mysql."
+                  : "During my time at Whirlpool, I had the opportunity to complete an apprenticeship program as an Information Systems Programmer. Through this experience, I improved my performance across various areas—including corporate operations, quality, and productivity—and gained proficiency in several programming languages and technologies, such as JavaScript, C, Python, front-end development, and databases (specifically phpMyAdmin and MySQL)."}
+              </p>
+            </div>
 
-    {/* Bloco 3 */}
-    <div style={{ marginTop: '16px' }}>
-      <strong>
-        {(text as any).language === "Switch website language to English"
-          ? "Udemy — Java Completo"
-          : "Udemy — Complete Java Course"}
-      </strong>
-      <p style={{ margin: '4px 0 0 0', opacity: 0.8, fontSize: '0.95rem' }}>
-        {(text as any).language === "Switch website language to English"
-          ? "Neste curso completo de Java avançado, dominei a lógica de programação, sintaxe da linguagem e os pilares da Programação Orientada a Objetos, como herança e polimorfismo. Aprendi a manipular estruturas de dados, arquivos, exceções e programação funcional com a Stream API. Também adquiri experiência prática com bancos de dados relacionais e NoSQL usando JDBC, JPA/Hibernate, Spring Boot e MongoDB."
-          : "In this comprehensive advanced Java course, I mastered programming logic, language syntax, and the pillars of Object-Oriented Programming, such as inheritance and polymorphism. I learned to handle data structures, files, exceptions, and functional programming using the Stream API. I also gained practical experience with relational and NoSQL databases using JDBC, JPA/Hibernate, Spring Boot, and MongoDB."}
-      </p>
-    </div>
-  </div>
-</div>
-
-
-
+            {/* Bloco 3 */}
+            <div style={{ marginTop: '16px' }}>
+              <strong>
+                {(text as any).language === "Switch website language to English"
+                  ? "Udemy — Java Completo"
+                  : "Udemy — Complete Java Course"}
+              </strong>
+              <p style={{ margin: '4px 0 0 0', opacity: 0.8, fontSize: '0.95rem' }}>
+                {(text as any).language === "Switch website language to English"
+                  ? "Neste curso completo de Java avançado, dominei a lógica de programação, sintaxe da linguagem e os pilares da Programação Orientada a Objetos, como herança e polimorfismo. Aprendi a manipular estruturas de dados, arquivos, exceções e programação funcional com a Stream API. Também adquiri experiência prática com bancos de dados relacionais e NoSQL usando JDBC, JPA/Hibernate, Spring Boot e MongoDB."
+                  : "In this comprehensive advanced Java course, I mastered programming logic, language syntax, and the pillars of Object-Oriented Programming, such as inheritance and polymorphism. I learned to handle data structures, files, exceptions, and functional programming using the Stream API. I also gained practical experience with relational and NoSQL databases using JDBC, JPA/Hibernate, Spring Boot, and MongoDB."}
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section id="projetos" className="section projects-section">
@@ -343,9 +345,43 @@ function PortfolioPage() {
           </div>
         </div>
         <form className="contact-form reveal" onSubmit={sendEmail}>
-          <label>{text.fields.name}<input required maxLength={100} name="name" autoComplete="name" placeholder={text.fields.namePlaceholder} /></label>
-          <label>{text.fields.email}<input required maxLength={255} type="email" name="email" autoComplete="email" placeholder="voce@email.com" /></label>
-          <label>{text.fields.message}<textarea required maxLength={2000} name="message" rows={5} placeholder={text.fields.messagePlaceholder} /></label>
+          <label>
+            {text.fields.name}
+            <input 
+              required 
+              maxLength={100} 
+              name="name" 
+              value={formData.name}
+              onChange={handleInputChange}
+              autoComplete="name" 
+              placeholder={text.fields.namePlaceholder} 
+            />
+          </label>
+          <label>
+            {text.fields.email}
+            <input 
+              required 
+              maxLength={255} 
+              type="email" 
+              name="email" 
+              value={formData.email}
+              onChange={handleInputChange}
+              autoComplete="email" 
+              placeholder="voce@email.com" 
+            />
+          </label>
+          <label>
+            {text.fields.message}
+            <textarea 
+              required 
+              maxLength={2000} 
+              name="message" 
+              value={formData.message}
+              onChange={handleInputChange}
+              rows={5} 
+              placeholder={text.fields.messagePlaceholder} 
+            />
+          </label>
           <button type="submit">{text.fields.send} <Send size={18} /></button>
         </form>
       </section>
