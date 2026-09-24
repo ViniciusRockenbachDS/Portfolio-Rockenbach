@@ -5,12 +5,11 @@ import { QueryClient } from '@tanstack/react-query'
 import { routeTree } from './routeTree.gen'
 import './styles.css'
 
-// Cria a instância do QueryClient necessária para o contexto do __root.tsx
 const queryClient = new QueryClient()
 
-// Cria o router utilizando a árvore de rotas automática
 const router = createRouter({
   routeTree,
+  basepath: '/Portfolio-Rockenbach', // 👈 Adicione esta linha com o nome exato do repositório!
   context: {
     queryClient,
   },
