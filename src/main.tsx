@@ -9,7 +9,7 @@ const queryClient = new QueryClient()
 
 const router = createRouter({
   routeTree,
-  basepath: '/Portfolio-Rockenbach', // 👈 Adicione esta linha com o nome exato do repositório!
+  basepath: '/Portfolio-Rockenbach', 
   context: {
     queryClient,
   },
