@@ -24,7 +24,7 @@ export const portfolio = {
     },
     {
       title: "Ferramentas & Suporte",
-      items: ["Git", "Docker", "Pacote Office", "Suporte técnico", "Pacote Office"],
+      items: ["Git", "Docker", "Pacote Office", "Suporte técnico", "Aprendizado contínuo"],
     },
   ],
   languages: [
@@ -76,6 +76,14 @@ export const portfolio = {
       description:
         "Automação aplicada a planilhas do ambiente industrial, reduzindo tarefas repetitivas e apoiando um fluxo de informação mais consistente.",
       tags: ["Automação", "Dados", "Produtividade"],
+    },
+    {
+      number: "03",
+      title: "Analizador de HTML",
+      context: "Teste para a empresa de CyberSegurança Axur",
+      description:
+        "Desenvoli um pequeno compilador em Java que analiza o HTML da página selecionada e fala a profundidade e carecterização dos textos.",
+      tags: ["Teste", "Segurança", "Desenvolvimento"],
     }
   ],  
    certificatesDetailed: [
@@ -89,7 +97,7 @@ export const portfolio = {
     },
     {
       title: "Udemy — Java Completo",
-      description: "Sua descrição sobre o curso da Udemy aqui..."
+      description: "Neste curso completo de Java avançado, dominei a lógica de programação, sintaxe da linguagem e os pilares da Programação Orientada a Objetos, como herança e polimorfismo. Aprendi a manipular estruturas de dados, arquivos, exceções e programação funcional com a Stream API. Também adquiri experiência prática com bancos de dados relacionais e NoSQL usando JDBC, JPA/Hibernate, Spring Boot e MongoDB."
     }
   ]
 };
@@ -112,7 +120,7 @@ export const portfolioEn = {
     },
     {
       title: "Tools & Support",
-      items: ["Git", "Docker", "Microsoft Office", "Technical Support", "Office package"],
+      items: ["Git", "Docker", "Microsoft Office", "Technical Support", "continuous learning"],
     },
   ],
   languages: [
@@ -167,12 +175,12 @@ export const portfolioEn = {
     },
     {
       number: "03",
-      title: "Information systems",
-      context: "Technical studies",
+      title: "HTML Analyzer",
+      context: "Test for the cybersecurity company Axur",
       description:
-        "Full-stack and database development exercises completed during my SESI SENAI apprenticeship and Software Engineering degree.",
-      tags: ["Front-end", "Databases", "Software"],
-    },
+        "I developed a small Java compiler that analyzes the HTML of a selected page and reports on text depth and quality.",
+      tags: ["Test", "Security", "Development"],
+    }
   ],
   certificatesDetailed: [
     {
