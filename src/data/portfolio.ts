@@ -66,16 +66,16 @@ export const portfolio = {
       title: "Gestão de peças",
       context: "Máquinas Whirlpool",
       description:
-        "Projeto voltado à organização, ao acompanhamento e armazenamento de peças/itens utilizadas em máquinas, conectando a rotina da manutenção a uma solução digital mais clara.",
-      tags: ["Gestão", "Indústria", "Desenvolvimento"],
+        "Projeto voltado à organização, ao acompanhamento e armazenamento de peças/itens utilizadas em máquinas, criando um estoque digital de peças a uma soluções mais rapidas.",
+      tags: ["Python", "HTML", "CSS","React", "SupaBase"],
     },
     {
       number: "02",
       title: "Automação de planilhas",
       context: "Whirlpool Corporation",
       description:
-        "Automação aplicada a planilhas do ambiente industrial, reduzindo tarefas repetitivas e apoiando um fluxo de informação mais consistente.",
-      tags: ["Automação", "Dados", "Produtividade"],
+        "Automação aplicada a planilhas do ambiente industrial, reduzindo tarefas repetitivas e apoiando um fluxo de informação mais consistente, diminuindo o tempo de tarefas.",
+      tags: ["Python", "Pandas", "Excel", "PowerQuery"],
     },
     {
       number: "03",
@@ -83,7 +83,7 @@ export const portfolio = {
       context: "Teste para a empresa de CyberSegurança Axur",
       description:
         "Desenvoli um pequeno compilador em Java que analiza o HTML da página selecionada e fala a profundidade e carecterização dos textos.",
-      tags: ["Teste", "Segurança", "Desenvolvimento"],
+      tags: ["Java"],
     }
   ],  
    certificatesDetailed: [
@@ -162,16 +162,16 @@ export const portfolioEn = {
       title: "Parts management",
       context: "Whirlpool machinery",
       description:
-        "A project focused on organizing and tracking parts used in machinery, connecting maintenance routines to a clearer digital solution.",
-      tags: ["Management", "Industry", "Development"],
+        "A project focused on the organization, tracking, and storage of machine parts and components, creating a digital inventory to enable faster solutions.",
+      tags: ["Python", "HTML", "CSS", "React", "Supabase"],
     },
     {
       number: "02",
       title: "Spreadsheet automation",
       context: "Whirlpool Corporation",
       description:
-        "Automation applied to spreadsheets in an industrial environment, reducing repetitive tasks and supporting a more consistent information flow.",
-      tags: ["Automation", "Data", "Productivity"],
+        "Automation applied to spreadsheets in an industrial environment, reducing repetitive tasks and supporting a more consistent information flow, reducing task time.",
+      tags: ["Python", "Pandas", "Excel", "PowerQuery"],
     },
     {
       number: "03",
@@ -179,7 +179,7 @@ export const portfolioEn = {
       context: "Test for the cybersecurity company Axur",
       description:
         "I developed a small Java compiler that analyzes the HTML of a selected page and reports on text depth and quality.",
-      tags: ["Test", "Security", "Development"],
+      tags: ["Java"],
     }
   ],
   certificatesDetailed: [
