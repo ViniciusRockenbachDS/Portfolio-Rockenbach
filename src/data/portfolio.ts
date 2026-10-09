@@ -84,6 +84,14 @@ export const portfolio = {
       description:
         "Desenvoli um pequeno compilador em Java que analiza o HTML da página selecionada e fala a profundidade e carecterização dos textos.",
       tags: ["Java"],
+    },
+    {
+      number: "04",
+      title: "MyMetas",
+      context: "Sistema de organização de metas pessoais",
+      description:
+        "O sistema ajuda o usuário a registrar metas com prazo, visualizar o progresso e manter a motivação com um sistema de recompensas inspirado em jogos.",
+      tags: ["Java", "PostgreSQL", "HTML", "CSS", "Docker","SpringBoot"],
     }
   ],  
    certificatesDetailed: [
@@ -180,6 +188,14 @@ export const portfolioEn = {
       description:
         "I developed a small Java compiler that analyzes the HTML of a selected page and reports on text depth and quality.",
       tags: ["Java"],
+    },
+    {
+      number: "04",
+      title: "MyMetas",
+      context: "Personal goal organization system",
+      description:
+        "The system helps the user register goals with deadlines, view progress, and maintain motivation with a reward system inspired by games.",
+      tags: ["Java", "PostgreSQL", "HTML", "CSS", "Docker","SpringBoot"],
     }
   ],
   certificatesDetailed: [
