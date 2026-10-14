@@ -91,7 +91,15 @@ export const portfolio = {
       context: "Sistema de organização de metas pessoais",
       description:
         "O sistema ajuda o usuário a registrar metas com prazo, visualizar o progresso e manter a motivação com um sistema de recompensas inspirado em jogos.",
-      tags: ["Java", "PostgreSQL", "HTML", "CSS", "Docker","SpringBoot"],
+      tags: ["Java", "PostgreSQL", "HTML", "CSS", "Docker","SpringBoot","React","Vite"],
+    },
+    {
+      number: "05",
+      title: "MyHair",
+      context: "Sistema de criação de sites e paineis de gerenciamento para salões de beleza e barbearias",
+      description:
+        "Projeto para criação de sites e paineis administrativos para salões de beleza e barbearias, focado administrar o estabelecimento e em agendamento rápido com automatização.",
+      tags: ["Java", "JavaScript", "HTML", "CSS", "Docker","PLpgSQL","Spring Boot","Maven","React","Vite"],
     }
   ],  
    certificatesDetailed: [
@@ -195,7 +203,15 @@ export const portfolioEn = {
       context: "Personal goal organization system",
       description:
         "The system helps the user register goals with deadlines, view progress, and maintain motivation with a reward system inspired by games.",
-      tags: ["Java", "PostgreSQL", "HTML", "CSS", "Docker","SpringBoot"],
+      tags: ["Java", "PostgreSQL", "HTML", "CSS", "Docker","SpringBoot","React","Vite"],
+    },
+    {
+      number: "05",
+      title: "MyHair",
+      context: "Website creation and management dashboard system for beauty salons and barbershops",
+      description:
+        "Project for creating websites and administrative dashboards for beauty salons and barbershops, focused on establishment management and fast, automated appointment scheduling.",
+      tags: ["Java", "JavaScript", "HTML", "CSS", "Docker","PLpgSQL","Spring Boot","Maven","React","Vite"],
     }
   ],
   certificatesDetailed: [
