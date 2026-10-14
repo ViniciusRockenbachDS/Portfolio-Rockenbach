@@ -98,7 +98,7 @@ export const portfolio = {
       title: "MyHair",
       context: "Sistema de criação de sites e paineis de gerenciamento para salões de beleza e barbearias",
       description:
-        "Projeto para criação de sites e paineis administrativos para salões de beleza e barbearias, focado administrar o estabelecimento e em agendamento rápido com automatização.",
+        "Projeto para criação de sites e paineis administrativos para salões de beleza e barbearias, focado para administrar o estabelecimento e em agendamento rápido com automatização.",
       tags: ["Java", "JavaScript", "HTML", "CSS", "Docker","PLpgSQL","Spring Boot","Maven","React","Vite"],
     }
   ],  
