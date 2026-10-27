@@ -11,20 +11,20 @@ export const portfolio = {
   intro:
     "Desenvolvedor em formação, motivado a ser um futuro engenheiro de dados",
   about:
-    "Atualmente, estou estudando diversas áreas de tecnologia e programação, como Python, SQL, AWS, Docker, Power BI, entre outros, para aprimorar minhas habilidades e buscar uma carreira sólida como engenheiro de dados, mas sempre aberto a outras oportunidades. Meu foco é criar projetos de dados que sejam escaláveis, automatizados e eficientes, garantindo a alta disponibilidade e a qualidade dos dados de ponta a ponta. Atualmente, estou cursando Engenharia de Software, além de outras disciplinas extracurriculares.",
+    "Engenheiro de dados fullstack com foco em python, SQL, Power BI, AWS, PySpark, Databricks; Também com boa experiência em Java, JavaScript e dentre outras tecnologias Meu foco é criar projetos de dados que sejam escaláveis, automatizados e eficientes, garantindo a alta disponibilidade e a qualidade dos dados de ponta a ponta, estou sempre em busca de conhecimento e oportunidades na área de desenvolvimento/TI!.",
   
   skillGroups: [
     {
       title: "Desenvolvimento",
-      items: ["JavaScript", "TypeScript", "Python", "Java", "Desenvolvimento Web"],
+      items: ["JavaScript", "TypeScript", "React", "Python", "Java", "Desenvolvimento Web"],
     },
     {
       title: "Dados & Cloud",
-      items: ["SQL", "PostgreSQL", "MySQL", "PySpark", "Power BI", "Databricks", "AWS"],
+      items: ["SQL", "PostgreSQL", "MySQL", "PySpark", "Power BI", "Databricks", "AWS", "AirFlow"],
     },
     {
       title: "Ferramentas & Suporte",
-      items: ["Git", "Docker", "Pacote Office", "Suporte técnico", "Aprendizado contínuo"],
+      items: ["Git", "Docker", "Pacote Office", "Suporte técnico", "Aprendizado contínuo", "Figma","N8N" ],
     },
   ],
   languages: [
@@ -123,20 +123,20 @@ export const portfolioEn = {
   role: "Developer",
   intro: "Developer in training, motivated to become a data engineer",
   about:
-    "I am currently studying several areas of technology and programming, including Python, SQL, AWS, Docker, and Power BI, to improve my skills and build a solid career as a data engineer, while remaining open to other opportunities. My goal is to create scalable, automated, and efficient data projects, ensuring high availability and end-to-end data quality. I am pursuing a degree in Software Engineering, along with additional extracurricular studies.",
+    "Full-stack data engineer with a focus on Python, SQL, Power BI, AWS, PySpark, and Databricks. I also have solid experience with Java, JavaScript, and various other technologies. My primary focus is building scalable, automated, and efficient data projects, ensuring high availability and end-to-end data quality. I am constantly seeking new knowledge and opportunities within the field of software development and IT!",
 
   skillGroups: [
     {
       title: "Development",
-      items: ["JavaScript", "TypeScript", "Python", "Java", "Web Development"],
+      items: ["JavaScript", "TypeScript", "React", "Python", "Java", "Web Development"],
     },
     {
       title: "Data & Cloud",
-      items: ["SQL", "PostgreSQL", "MySQL", "PySpark", "Power BI", "Databricks", "AWS"],
+      items: ["SQL", "PostgreSQL", "MySQL", "PySpark", "Power BI", "Databricks", "AWS", "AirFlow"],
     },
     {
       title: "Tools & Support",
-      items: ["Git", "Docker", "Microsoft Office", "Technical Support", "continuous learning"],
+      items: ["Git", "Docker", "Microsoft Office", "Technical Support", "continuous learning", "Figma", "N8N"],
     },
   ],
   languages: [
