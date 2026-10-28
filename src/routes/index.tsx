@@ -5,6 +5,7 @@ import {
   Award,
   BriefcaseBusiness,
   Code2,
+  ExternalLink,
   GraduationCap,
   Github,
   Linkedin,
@@ -13,15 +14,16 @@ import {
   Menu,
   Moon,
   Phone,
+  Play,
   Send,
   Sparkles,
   X,
 } from "lucide-react";
-import { useEffect, useState, type FormEvent, type ChangeEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent, type ChangeEvent } from "react";
 
 import architectureImage from "../assets/developer-architecture.jpg";
 import { CursorTrail } from "../components/CursorTrail";
-import { portfolio, portfolioEn } from "../data/portfolio";
+import { portfolio, portfolioEn, projectExtras, type ProjectMedia } from "../data/portfolio";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -74,6 +76,7 @@ const copy = {
     photoAlt: "foto de Vinícius Rockenbach",
     theme: "Alternar tema claro ou escuro",
     language: "Switch website language to English",
+    projectLinks: { demo: "Testar projeto", github: "Código", linkedin: "Post no LinkedIn", preview: "Ampliar prévia de", noPreview: "Prévia em breve", close: "Fechar prévia" },
   },
   en: {
     nav: [["Home", "inicio"], ["About", "sobre"], ["Skills", "habilidades"], ["Experience", "experiencia"], ["Projects", "projetos"], ["Contact", "contato"]] as const,
@@ -104,6 +107,7 @@ const copy = {
     photoAlt: "Vinícius Rockenbach on a trail overlooking the mountains",
     theme: "Switch light or dark theme",
     language: "Mudar o idioma do site para português",
+    projectLinks: { demo: "Try it live", github: "Code", linkedin: "LinkedIn post", preview: "Enlarge preview of", noPreview: "Preview coming soon", close: "Close preview" },
   },
 } as const;
 
@@ -121,6 +125,7 @@ function PortfolioPage() {
   const [locale, setLocale] = useState<"pt" | "en">("pt");
   const [theme, setTheme] = useState<"dark" | "light">("dark");
   const [preferencesLoaded, setPreferencesLoaded] = useState(false);
+  const [openMedia, setOpenMedia] = useState<(ProjectMedia & { title: string }) | null>(null);
   
   // Estado para os dados digitados no formulário
   const [formData, setFormData] = useState({
@@ -147,6 +152,18 @@ function PortfolioPage() {
     window.localStorage.setItem("portfolio-locale", locale);
     window.localStorage.setItem("portfolio-theme", theme);
   }, [locale, preferencesLoaded, theme]);
+
+  // Fecha a prévia ampliada com a tecla Esc
+  useEffect(() => {
+    if (!openMedia) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setOpenMedia(null); };
+    window.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [openMedia]);
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -320,15 +337,52 @@ function PortfolioPage() {
       <section id="projetos" className="section projects-section">
         <SectionHeading number="04" eyebrow={text.sections.projects[0]} title={text.sections.projects[1]} />
         <div className="projects-list">
-          {content.projects.map((project) => (
-            <article className="project-row reveal" key={project.number}>
-              <span className="project-number">{project.number}</span>
-              <div className="project-title"><span>{project.context}</span><h3>{project.title}</h3></div>
-              <p>{project.description}</p>
-              <div className="project-tags">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
-              <ArrowUpRight className="project-arrow" />
-            </article>
-          ))}
+          {content.projects.map((project) => {
+            const extra = projectExtras[project.number] ?? {};
+            const links = extra.links ?? {};
+            const mainLink = links.demo ?? links.linkedin ?? links.github;
+            return (
+                <article className={`project-row reveal${extra.media ? "" : " project-row--no-media"}`} key={project.number}>
+                <span className="project-number">{project.number}</span>
+                <ProjectPreview
+                  media={extra.media}
+                  title={project.title}
+                  emptyLabel={text.projectLinks.noPreview}
+                  openLabel={`${text.projectLinks.preview} ${project.title}`}
+                  onOpen={(media) => setOpenMedia({ ...media, title: project.title })}
+                />
+                <div className="project-title"><span>{project.context}</span><h3>{project.title}</h3></div>
+                <p>{project.description}</p>
+                <div className="project-tags">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
+                {(links.demo || links.github || links.linkedin) && (
+                  <div className="project-links">
+                    {links.demo && (
+                      <a className="project-link project-link--main" href={links.demo} target="_blank" rel="noreferrer">
+                        <ExternalLink size={16} /> {text.projectLinks.demo}
+                      </a>
+                    )}
+                    {links.github && (
+                      <a className="project-link" href={links.github} target="_blank" rel="noreferrer">
+                        <Github size={16} /> {text.projectLinks.github}
+                      </a>
+                    )}
+                    {links.linkedin && (
+                      <a className="project-link" href={links.linkedin} target="_blank" rel="noreferrer">
+                        <Linkedin size={16} /> {text.projectLinks.linkedin}
+                      </a>
+                    )}
+                  </div>
+                )}
+                {mainLink ? (
+                  <a className="project-arrow" href={mainLink} target="_blank" rel="noreferrer" aria-label={project.title}>
+                    <ArrowUpRight />
+                  </a>
+                ) : (
+                  <ArrowUpRight className="project-arrow project-arrow--idle" aria-hidden="true" />
+                )}
+              </article>
+            );
+          })}
         </div>
       </section>
 
@@ -386,6 +440,22 @@ function PortfolioPage() {
         </form>
       </section>
 
+      {openMedia && (
+        <div className="media-lightbox" role="dialog" aria-modal="true" aria-label={openMedia.title} onClick={() => setOpenMedia(null)}>
+          <button className="media-lightbox__close" type="button" onClick={() => setOpenMedia(null)} aria-label={text.projectLinks.close}>
+            <X />
+          </button>
+          <div className="media-lightbox__frame" onClick={(e) => e.stopPropagation()}>
+            {openMedia.type === "video" ? (
+              <video src={mediaUrl(openMedia.src)} poster={openMedia.poster ? mediaUrl(openMedia.poster) : undefined} controls autoPlay playsInline />
+            ) : (
+              <img src={mediaUrl(openMedia.src)} alt={openMedia.title} />
+            )}
+            <p>{openMedia.title}</p>
+          </div>
+        </div>
+      )}
+
       <footer>
         <span>© 2026 Vinícius Rockenbach</span>
         <a href="#inicio">{text.top} <ArrowUpRight size={15} /></a>
@@ -396,4 +466,69 @@ function PortfolioPage() {
 
 function TimelineItem({ period, title, subtitle, description }: { period: string; title: string; subtitle: string; description: string }) {
   return <article className="timeline-item"><span>{period}</span><div><h4>{title}</h4><strong>{subtitle}</strong><p>{description}</p></div></article>;
+}
+
+// Arquivos de /public precisam do BASE_URL (/Portfolio-Rockenbach/) no GitHub Pages.
+// URLs completas (https://...) são usadas como estão.
+function mediaUrl(src: string) {
+  if (/^https?:\/\//.test(src)) return src;
+  return `${import.meta.env.BASE_URL}${src.replace(/^\//, "")}`;
+}
+
+function ProjectPreview({
+  media,
+  title,
+  emptyLabel,
+  openLabel,
+  onOpen,
+}: {
+    media?: ProjectMedia | undefined;
+  title: string;
+  emptyLabel: string;
+  openLabel: string;
+  onOpen: (media: ProjectMedia) => void;
+}) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [failed, setFailed] = useState(false);
+
+    // Sem mídia (ou arquivo não encontrado): não mostra nada
+  if (!media || failed) return null;
+
+  const reduceMotion = typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const play = () => { if (!reduceMotion) videoRef.current?.play().catch(() => {}); };
+  const stop = () => {
+    const v = videoRef.current;
+    if (v) { v.pause(); v.currentTime = 0; }
+  };
+
+  return (
+    <button
+      type="button"
+      className="project-preview"
+      onClick={() => onOpen(media)}
+      onMouseEnter={play}
+      onMouseLeave={stop}
+      onFocus={play}
+      onBlur={stop}
+      aria-label={openLabel}
+    >
+      {media.type === "video" ? (
+        <>
+          <video
+            ref={videoRef}
+            src={mediaUrl(media.src)}
+            poster={media.poster ? mediaUrl(media.poster) : undefined}
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            onError={() => setFailed(true)}
+          />
+          <span className="project-preview__play"><Play size={16} fill="currentColor" /></span>
+        </>
+      ) : (
+        <img src={mediaUrl(media.src)} alt="" loading="lazy" onError={() => setFailed(true)} />
+      )}
+    </button>
+  );
 }

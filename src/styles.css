@@ -239,14 +239,102 @@ main > header, main > section, main > footer { position: relative; z-index: 2; }
 .certificates strong { font-size: .95rem; font-weight: 600; }
 
 .projects-list { border-top: 1px solid var(--border); }
-.project-row { position: relative; display: grid; grid-template-columns: 60px 1fr 1.15fr .8fr 30px; gap: 2rem; align-items: center; padding: 2.4rem .5rem; border-bottom: 1px solid var(--border); transition: padding .3s, background .3s; }
+.project-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 50px minmax(220px, 300px) 1fr 1.2fr 30px;
+  grid-template-areas:
+    "num media title desc  arrow"
+    "num media tags  links arrow";
+  column-gap: 2rem;
+  row-gap: 1.25rem;
+  align-items: start;
+  padding: 2.4rem .5rem;
+  border-bottom: 1px solid var(--border);
+  transition: padding .3s, background .3s;
+}
 .project-row:hover { padding-left: 1.25rem; padding-right: 1.25rem; background: var(--card); }
-.project-number { color: var(--primary); font: 700 1rem var(--font-display); }
+.project-row--no-media {
+  grid-template-columns: 50px 1fr 1.2fr 30px;
+  grid-template-areas:
+    "num title desc  arrow"
+    "num tags  links arrow";
+}
+.project-number { grid-area: num; color: var(--primary); font: 700 1rem var(--font-display); padding-top: .2rem; }
+.project-title { grid-area: title; }
 .project-title span { color: var(--muted-foreground); text-transform: uppercase; font-size: .78rem; font-weight: 700; letter-spacing: .1em; }
 .project-title h3 { margin: .45rem 0 0; font: 700 clamp(1.35rem, 2.2vw, 1.9rem) var(--font-display); }
-.project-row > p { color: var(--muted-foreground); font-size: 1rem; line-height: 1.7; }
-.project-arrow { color: var(--primary); transition: transform .3s; }
+.project-row > p { grid-area: desc; margin: 0; color: var(--muted-foreground); font-size: 1rem; line-height: 1.7; }
+.project-tags { grid-area: tags; align-self: end; }
+.project-arrow { grid-area: arrow; color: var(--primary); transition: transform .3s; }
+.project-arrow--idle { opacity: .35; }
 .project-row:hover .project-arrow { transform: translate(4px,-4px); }
+
+/* Prévia (foto / vídeo) */
+.project-preview {
+  grid-area: media;
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--secondary);
+  cursor: zoom-in;
+}
+.project-preview img, .project-preview video { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s; }
+.project-row:hover .project-preview img, .project-row:hover .project-preview video { transform: scale(1.04); }
+.project-preview:focus-visible { outline: 2px solid var(--ring); outline-offset: 3px; }
+.project-preview__play {
+  position: absolute; left: .7rem; bottom: .7rem;
+  display: grid; place-items: center; width: 34px; height: 34px;
+  border-radius: 50%; background: var(--primary); color: var(--primary-foreground);
+  pointer-events: none;
+}
+.project-preview--empty {
+  cursor: default;
+  display: grid; place-content: center; justify-items: center; gap: .35rem;
+  background: repeating-linear-gradient(135deg, var(--secondary) 0 10px, var(--muted) 10px 20px);
+}
+.project-preview--empty strong { color: var(--primary); font: 700 2rem var(--font-display); }
+.project-preview--empty span { color: var(--muted-foreground); font-size: .8rem; font-weight: 600; }
+
+/* Botões: testar, GitHub, LinkedIn */
+.project-links { grid-area: links; align-self: end; display: flex; flex-wrap: wrap; gap: .6rem; }
+.project-link {
+  display: inline-flex; align-items: center; gap: .45rem;
+  padding: .6rem .95rem;
+  border: 1px solid var(--border); border-radius: 4px;
+  color: var(--foreground); font-size: .88rem; font-weight: 600;
+  transition: border-color .25s, color .25s, transform .25s;
+}
+.project-link:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-2px); }
+.project-link--main { background: var(--primary); border-color: var(--primary); color: var(--primary-foreground); }
+.project-link--main:hover { color: var(--primary-foreground); filter: brightness(1.08); }
+.project-link:focus-visible, .project-arrow:focus-visible { outline: 2px solid var(--ring); outline-offset: 3px; }
+
+/* Prévia ampliada */
+.media-lightbox {
+  position: fixed; inset: 0; z-index: 100;
+  display: grid; place-items: center;
+  padding: clamp(1rem, 4vw, 3rem);
+  background: oklch(0.08 0.015 255 / .88);
+  backdrop-filter: blur(6px);
+}
+.media-lightbox__frame { width: min(1100px, 100%); }
+.media-lightbox__frame img, .media-lightbox__frame video {
+  width: 100%; max-height: 80vh; object-fit: contain; display: block;
+  border-radius: 6px; background: #000;
+}
+.media-lightbox__frame p { margin: .9rem 0 0; color: oklch(0.96 0.008 255); font: 700 1.1rem var(--font-display); }
+.media-lightbox__close {
+  position: absolute; top: 1rem; right: 1rem;
+  display: grid; place-items: center; width: 44px; height: 44px;
+  border: 1px solid oklch(1 0 0 / .25); border-radius: 50%;
+  background: transparent; color: #fff; cursor: pointer;
+}
 
 
 .contact-section { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(3rem,8vw,8rem); background: color-mix(in oklab, var(--secondary) 92%, transparent); }
@@ -282,9 +370,24 @@ footer a { display: flex; align-items: center; gap: .4rem; color: var(--foregrou
   .skills-grid { grid-template-columns: 1fr; }
   .languages { grid-template-columns: 1fr; gap: 1.5rem; }
   .timeline { grid-template-columns: 1fr; }
-  .project-row { grid-template-columns: 40px 1fr 30px; gap: 1rem; }
-  .project-row > p, .project-tags { grid-column: 2 / 4; }
-  .project-arrow { grid-column: 3; grid-row: 1; }
+    .project-row {
+    grid-template-columns: 40px 1fr 30px;
+    grid-template-areas:
+      "num   title arrow"
+      "media media media"
+      "desc  desc  desc"
+      "tags  tags  tags"
+      "links links links";
+    gap: 1rem;
+  }
+    .project-row--no-media {
+    grid-template-columns: 40px 1fr 30px;
+    grid-template-areas:
+      "num   title arrow"
+      "desc  desc  desc"
+      "tags  tags  tags"
+      "links links links";
+  }
 }
 
 @media (pointer: coarse) {

@@ -245,3 +245,58 @@ export const portfolioEn = {
     }
   ]
 } as const;
+
+
+/* ------------------------------------------------------------------
+   PRÉVIAS E LINKS DOS PROJETOS
+   Vale para PT e EN ao mesmo tempo. A chave é o "number" do projeto.
+
+   media:
+     type: "image" ou "video"
+     src:  arquivo dentro de /public (ex.: "projetos/mymetas.mp4")
+           ou uma URL completa (https://...)
+     poster (opcional, só vídeo): imagem mostrada antes do vídeo tocar
+
+   links (todos opcionais, só aparece o botão que você preencher):
+     demo:     link para o usuário testar o projeto
+     github:   repositório
+     linkedin: post do LinkedIn sobre o projeto
+------------------------------------------------------------------- */
+export type ProjectMedia = {
+  type: "image" | "video";
+  src: string;
+  poster?: string;
+};
+
+export type ProjectLinks = {
+  demo?: string;
+  github?: string;
+  linkedin?: string;
+};
+
+export type ProjectExtra = {
+  media?: ProjectMedia;
+  links?: ProjectLinks;
+};
+
+export const projectExtras: Record<string, ProjectExtra> = {
+    "01": {},
+  "02": {},
+  "03": {
+    links: { github: "https://github.com/ViniciusRockenbachDS/HTML-Analyzer" },
+  },
+  "04": {
+    links: {
+      demo: "https://mymetas.onrender.com",
+      linkedin: "https://lnkd.in/p/dX_QYces",
+    },
+  },
+  "05": {
+    media: { type: "video", src: "projetos/MyHair.mp4" },
+  },
+  "06": {media: { type: "image", src: "projetos/FTMySaS.jpg" },
+    links: {
+      linkedin: "https://lnkd.in/p/dbGWadB4",
+    },
+  },
+};
