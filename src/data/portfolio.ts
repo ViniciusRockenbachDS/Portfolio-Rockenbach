@@ -100,6 +100,14 @@ export const portfolio = {
       description:
         "Projeto para criação de sites e paineis administrativos para salões de beleza e barbearias, focado para administrar o estabelecimento e em agendamento rápido com automatização.",
       tags: ["Java", "JavaScript", "HTML", "CSS", "Docker","PLpgSQL","Spring Boot","Maven","React","Vite"],
+    },
+    {
+      number: "06",
+      title: "MySaS",
+      context: "ERP Empresarial",
+      description:
+        "sistema com base no CIGAM, um sistema de gestão financeira para pequenas empresas, um ERP. No My SaS, a pessoa arrasta os arquivos para a tela, e o sistema reconhece as colunas, categoriza cada lançamento e aprende com as correções. No fim, aparecem a DRE do mês, o fluxo de caixa dos próximos 90 dias, as contas a vencer e a conferência dos repasses do cartão..",
+      tags: ["Tauri", "Rust", "React", "TypeScript", "Docker","Python","DuckDB","PostgreSQL","Vite"],
     }
   ],  
    certificatesDetailed: [
@@ -212,6 +220,14 @@ export const portfolioEn = {
       description:
         "Project for creating websites and administrative dashboards for beauty salons and barbershops, focused on establishment management and fast, automated appointment scheduling.",
       tags: ["Java", "JavaScript", "HTML", "CSS", "Docker","PLpgSQL","Spring Boot","Maven","React","Vite"],
+    },
+    {
+      number: "06",
+      title: "MySaS",
+      context: "Enterprise ERP",
+      description:
+        "A system based on CIGAM,an ERP and financial management solution for small businesses, is used here. In My SaS, the user simply drags and drops files onto the screen; the system then identifies the columns, categorizes each entry, and learns from any corrections made. The final output includes the monthly income statement (DRE), a 90-day cash flow forecast, a list of upcoming accounts payable, and a reconciliation of credit card payouts.",
+      tags: ["Tauri", "Rust", "React", "TypeScript", "Docker","Python","DuckDB","PostgreSQL","Vite"],
     }
   ],
   certificatesDetailed: [
