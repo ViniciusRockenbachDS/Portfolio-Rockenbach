@@ -11,7 +11,7 @@ export const portfolio = {
   intro:
     "Desenvolvedor em formação, motivado a ser um futuro engenheiro de dados",
   about:
-    "Engenheiro de dados fullstack com foco em python, SQL, Power BI, AWS, PySpark, Databricks; Também com boa experiência em Java, JavaScript e dentre outras tecnologias Meu foco é criar projetos de dados que sejam escaláveis, automatizados e eficientes, garantindo a alta disponibilidade e a qualidade dos dados de ponta a ponta, estou sempre em busca de conhecimento e oportunidades na área de desenvolvimento/TI!.",
+    "Engenheiro de dados fullstack com foco em python, SQL, Power BI, AWS, PySpark, Databricks; Também com boa experiência em Java, JavaScript e dentre outras tecnologias. Meu foco é criar projetos de dados que sejam escaláveis, automatizados e eficientes, garantindo a alta disponibilidade e a qualidade dos dados de ponta a ponta, estou sempre em busca de conhecimento e oportunidades na área de desenvolvimento/TI!.",
   
   skillGroups: [
     {
