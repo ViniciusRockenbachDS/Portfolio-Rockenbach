@@ -108,6 +108,14 @@ export const portfolio = {
       description:
         "sistema com base no CIGAM, um sistema de gestão financeira para pequenas empresas, um ERP. No My SaS, a pessoa arrasta os arquivos para a tela, e o sistema reconhece as colunas, categoriza cada lançamento e aprende com as correções. No fim, aparecem a DRE do mês, o fluxo de caixa dos próximos 90 dias, as contas a vencer e a conferência dos repasses do cartão..",
       tags: ["Tauri", "Rust", "React", "TypeScript", "Docker","Python","DuckDB","PostgreSQL","Vite"],
+    },
+    {
+      number: "07",
+      title: "Docas",
+      context: "Rede de galpões logísticos",
+      description:
+        "Aplicação web que centraliza os indicadores de uma rede de galpões logísticos em um painel com controle de acesso por papel (RBAC) e um relatório do Power BI embutido. Gestores de operação veem o painel completo; operadores veem só as rotinas do turno. A regra vale no front e, principalmente, na API: o embed token do Power BI só é gerado depois de o backend validar o JWT e o papel do usuário.",
+      tags: ["Tauri", "Rust", "React", "TypeScript", "Docker","Python","DuckDB","PostgreSQL","Vite"],
     }
   ],  
    certificatesDetailed: [
@@ -122,6 +130,10 @@ export const portfolio = {
     {
       title: "Udemy — Java Completo",
       description: "Neste curso completo de Java avançado, dominei a lógica de programação, sintaxe da linguagem e os pilares da Programação Orientada a Objetos, como herança e polimorfismo. Aprendi a manipular estruturas de dados, arquivos, exceções e programação funcional com a Stream API. Também adquiri experiência prática com bancos de dados relacionais e NoSQL usando JDBC, JPA/Hibernate, Spring Boot e MongoDB."
+    },
+    {
+      title: "Udemy — MySQL Do Básico ao Avançado",
+      description: "Neste curso prático de MySQL do básico ao avançado, dominei a sintaxe SQL e a estruturação de bancos de dados relacionais com foco em regras e restrições de integridade. Aprendi a construir consultas complexas utilizando múltiplos JOINs, operadores lógicos, manipulação de strings e funções agregadas com GROUP BY para análise de dados e relatórios de desempenho. Além disso, adquiri experiência na integração do MySQL com Python para automação de fluxos e na aplicação de banco de dados em sistemas completos."
     }
   ]
 };
@@ -228,6 +240,14 @@ export const portfolioEn = {
       description:
         "A system based on CIGAM,an ERP and financial management solution for small businesses, is used here. In My SaS, the user simply drags and drops files onto the screen; the system then identifies the columns, categorizes each entry, and learns from any corrections made. The final output includes the monthly income statement (DRE), a 90-day cash flow forecast, a list of upcoming accounts payable, and a reconciliation of credit card payouts.",
       tags: ["Tauri", "Rust", "React", "TypeScript", "Docker","Python","DuckDB","PostgreSQL","Vite"],
+    },
+    {
+      number: "07",
+      title: "Docas",
+      context: "Rede de galpões logísticos",
+      description:
+        "A web application that centralizes performance indicators for a network of logistics warehouses into a dashboard featuring Role-Based Access Control (RBAC) and an embedded Power BI report. Operations managers have access to the full dashboard, while operators see only their specific shift routines. This logic is enforced on the front end and, most importantly, within the API: the Power BI embedded token is generated only after the backend has validated the JWT and the user's assigned role.",
+      tags: ["Tauri", "Rust", "React", "TypeScript", "Docker","Python","DuckDB","PostgreSQL","Vite"],
     }
   ],
   certificatesDetailed: [
@@ -242,6 +262,10 @@ export const portfolioEn = {
     {
       title: "Udemy — Complete Java Course",
       description: "Your description about the Udemy course in English here..."
+    },
+    {
+      title: "Udemy — MySQL Do Básico ao Avançado",
+      description: "In this practical MySQL course—covering everything from the basics to advanced topics—I mastered SQL syntax and the structuring of relational databases, with a focus on integrity rules and constraints. I learned to build complex queries using multiple JOINs, logical operators, string manipulation, and aggregate functions combined with GROUP BY for data analysis and performance reporting. Furthermore, I gained experience in integrating MySQL with Python for workflow automation and in implementing databases within full-scale systems."
     }
   ]
 } as const;
