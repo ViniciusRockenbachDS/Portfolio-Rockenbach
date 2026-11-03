@@ -286,6 +286,7 @@ export const projectExtras: Record<string, ProjectExtra> = {
     links: { github: "https://github.com/ViniciusRockenbachDS/HTML-Analyzer" },
   },
   "04": {
+    media: { type: "image", src: "projetos/MyMetasPortfolio.jpeg" },
     links: {
       demo: "https://mymetas.onrender.com",
       linkedin: "https://lnkd.in/p/dX_QYces",
@@ -293,10 +294,18 @@ export const projectExtras: Record<string, ProjectExtra> = {
   },
   "05": {
     media: { type: "video", src: "projetos/MyHair.mp4" },
+    links: {
+      demo: "https://myhair-demo.onrender.com",
+    },
   },
   "06": {media: { type: "image", src: "projetos/FTMySaS.jpg" },
     links: {
       linkedin: "https://lnkd.in/p/dbGWadB4",
+    },
+  },
+  "07": {media: { type: "image", src: "projetos/DocasPort.jpg" },
+    links: {
+      demo: "https://doca-web-pfgv.onrender.com",
     },
   },
 };
