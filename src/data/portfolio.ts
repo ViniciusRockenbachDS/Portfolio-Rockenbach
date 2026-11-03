@@ -156,7 +156,7 @@ export const portfolioEn = {
     },
     {
       title: "Tools & Support",
-      items: ["Git", "Docker", "Microsoft Office", "Technical Support", "continuous learning", "Figma", "N8N"],
+      items: ["Git", "Docker", "Microsoft Office", "Technical Support", "continuous learning", "Figma", "N8N", "Render", "Supabase"],
     },
   ],
   languages: [

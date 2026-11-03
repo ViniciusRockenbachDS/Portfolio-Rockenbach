@@ -330,8 +330,24 @@ function PortfolioPage() {
                   : "In this comprehensive advanced Java course, I mastered programming logic, language syntax, and the pillars of Object-Oriented Programming, such as inheritance and polymorphism. I learned to handle data structures, files, exceptions, and functional programming using the Stream API. I also gained practical experience with relational and NoSQL databases using JDBC, JPA/Hibernate, Spring Boot, and MongoDB."}
               </p>
             </div>
+
+            {/* Bloco 4 */}
+            <div style={{ marginTop: '16px' }}>
+              <strong>
+                {(text as any).language === "Switch website language to English"
+                  ? "Udemy — SQL Completo Do Básico ao Avançado"
+                  : "Udemy — Complete SQL Course"}
+              </strong>
+              <p style={{ margin: '4px 0 0 0', opacity: 0.8, fontSize: '0.95rem' }}>
+                {(text as any).language === "Switch website language to English"
+                  ? "Junto ao período que trabalhei na whirlpool tive a oportunidade de realizar uma aprendizagem no curso de programador de sistemas da informação. Dentro dessa aprendizagem aumentei meu desempenho em diversas etapas, vivências em uma empresa, qualidade e produtividade e diversas linguagens de programação como; Java Script, C, Python, Front end e Banco de dados sendo eles PHPMyAdmin e Mysql."
+                  : "During my time at Whirlpool, I had the opportunity to complete an apprenticeship program as an Information Systems Programmer. Through this experience, I improved my performance across various areas—including corporate operations, quality, and productivity—and gained proficiency in several programming languages and technologies, such as JavaScript, C, Python, front-end development, and databases (specifically phpMyAdmin and MySQL)."}
+              </p>
+            </div>
           </div>
         </div>
+
+        
       </section>
 
       <section id="projetos" className="section projects-section">
