@@ -115,7 +115,7 @@ export const portfolio = {
       context: "Rede de galpões logísticos",
       description:
         "Aplicação web que centraliza os indicadores de uma rede de galpões logísticos em um painel com controle de acesso por papel (RBAC) e um relatório do Power BI embutido. Gestores de operação veem o painel completo; operadores veem só as rotinas do turno. A regra vale no front e, principalmente, na API: o embed token do Power BI só é gerado depois de o backend validar o JWT e o papel do usuário.",
-      tags: ["Tauri", "Rust", "React", "TypeScript", "Docker","Python","DuckDB","PostgreSQL","Vite"],
+      tags: ["PowerBi", "Node.js", "React", "Supabase", "Render","Python","PostgreSQL"],
     }
   ],  
    certificatesDetailed: [
@@ -243,11 +243,11 @@ export const portfolioEn = {
     },
     {
       number: "07",
-      title: "Docas",
-      context: "Rede de galpões logísticos",
+      title: "Docks",
+      context: "Network of logistics warehouses",
       description:
         "A web application that centralizes performance indicators for a network of logistics warehouses into a dashboard featuring Role-Based Access Control (RBAC) and an embedded Power BI report. Operations managers have access to the full dashboard, while operators see only their specific shift routines. This logic is enforced on the front end and, most importantly, within the API: the Power BI embedded token is generated only after the backend has validated the JWT and the user's assigned role.",
-      tags: ["Tauri", "Rust", "React", "TypeScript", "Docker","Python","DuckDB","PostgreSQL","Vite"],
+      tags: ["PowerBi", "Node.js", "React", "Supabase", "Render","Python","PostgreSQL"],
     }
   ],
   certificatesDetailed: [
