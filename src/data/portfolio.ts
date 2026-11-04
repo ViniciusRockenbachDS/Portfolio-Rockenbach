@@ -115,7 +115,7 @@ export const portfolio = {
       context: "Rede de galpões logísticos",
       description:
         "Aplicação web que centraliza os indicadores de uma rede de galpões logísticos em um painel com controle de acesso por papel (RBAC) e um relatório do Power BI embutido. Gestores de operação veem o painel completo; operadores veem só as rotinas do turno. A regra vale no front e, principalmente, na API: o embed token do Power BI só é gerado depois de o backend validar o JWT e o papel do usuário.",
-      tags: ["PowerBi", "Node.js", "React", "Supabase", "Render","Python","PostgreSQL"],
+      tags: ["PowerBi", "Node.js", "React", "Supabase", "Render","Python","PostgreSQL", "TypeScript", "JavaScript"],
     }
   ],  
    certificatesDetailed: [
