@@ -247,7 +247,7 @@ export const portfolioEn = {
       context: "Network of logistics warehouses",
       description:
         "A web application that centralizes performance indicators for a network of logistics warehouses into a dashboard featuring Role-Based Access Control (RBAC) and an embedded Power BI report. Operations managers have access to the full dashboard, while operators see only their specific shift routines. This logic is enforced on the front end and, most importantly, within the API: the Power BI embedded token is generated only after the backend has validated the JWT and the user's assigned role.",
-      tags: ["PowerBi", "Node.js", "React", "Supabase", "Render","Python","PostgreSQL"],
+      tags: ["PowerBi", "Node.js", "React", "Supabase", "Render","Python","PostgreSQL", "TypeScript", "JavaScript"],
     }
   ],
   certificatesDetailed: [
