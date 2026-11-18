@@ -348,10 +348,10 @@ export const projectExtras: Record<string, ProjectExtra> = {
       demo: "https://doca-web-pfgv.onrender.com",
     },
   },
-  "08": {media: { type: "image", src: "projetos/CRM-projeto.jpg" },
+  "08": {media: { type: "image", src: "projetos/CRM-projeto.png" },
     links: {
       github: "https://github.com/ViniciusRockenbachDS/CRMrockenebach",
-      linkedin: "https://lnkd.in/p/dX_QYces",
+      linkedin: "https://lnkd.in/p/dhxqnGaM",
     },
   },
 };
