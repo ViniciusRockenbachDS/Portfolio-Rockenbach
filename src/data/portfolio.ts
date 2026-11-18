@@ -116,6 +116,14 @@ export const portfolio = {
       description:
         "Aplicação web que centraliza os indicadores de uma rede de galpões logísticos em um painel com controle de acesso por papel (RBAC) e um relatório do Power BI embutido. Gestores de operação veem o painel completo; operadores veem só as rotinas do turno. A regra vale no front e, principalmente, na API: o embed token do Power BI só é gerado depois de o backend validar o JWT e o papel do usuário.",
       tags: ["PowerBi", "Node.js", "React", "Supabase", "Render","Python","PostgreSQL", "TypeScript", "JavaScript"],
+    },
+    {
+      number: "08",
+      title: "CRM-Rockenbach",
+      context: "CRM preparado com Inteligência Artificial",
+      description:
+        "Sistema completo de gestão comercial: clientes, funil de vendas e controle de recebimentos, com um dashboard que mostra em tempo real receita, ticket médio, taxa de conversão e inadimplência.",
+      tags: ["Python", "FastAPI", "SQLAlchemy", "PostgreSQL", "React","TypeScript","PostgreSQL", "TypeScript", "Docker"],
     }
   ],  
    certificatesDetailed: [
@@ -248,6 +256,14 @@ export const portfolioEn = {
       description:
         "A web application that centralizes performance indicators for a network of logistics warehouses into a dashboard featuring Role-Based Access Control (RBAC) and an embedded Power BI report. Operations managers have access to the full dashboard, while operators see only their specific shift routines. This logic is enforced on the front end and, most importantly, within the API: the Power BI embedded token is generated only after the backend has validated the JWT and the user's assigned role.",
       tags: ["PowerBi", "Node.js", "React", "Supabase", "Render","Python","PostgreSQL", "TypeScript", "JavaScript"],
+    },
+    {
+      number: "08",
+      title: "CRM-Rockenbach",
+      context: "CRM equipped with Artificial Intelligence.",
+      description:
+        "Complete commercial management system: clients, sales funnel, and collection tracking, featuring a dashboard that displays real-time revenue, average ticket size, conversion rates, and delinquency rates.",
+      tags: ["Python", "FastAPI", "SQLAlchemy", "PostgreSQL", "React","TypeScript","PostgreSQL", "TypeScript", "Docker"],
     }
   ],
   certificatesDetailed: [
@@ -330,6 +346,12 @@ export const projectExtras: Record<string, ProjectExtra> = {
   "07": {media: { type: "image", src: "projetos/DocasPort.jpg" },
     links: {
       demo: "https://doca-web-pfgv.onrender.com",
+    },
+  },
+  "08": {media: { type: "image", src: "projetos/CRM-projeto.jpg" },
+    links: {
+      github: "https://github.com/ViniciusRockenbachDS/CRMrockenebach",
+      linkedin: "https://lnkd.in/p/dX_QYces",
     },
   },
 };
